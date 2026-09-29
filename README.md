@@ -13,6 +13,6 @@ The project is being developed using **Python** and follows an Agile software de
 | Name       | SRN       |
 | ---------- | --------- |
 | `Tanisha Mathur` | `PES1UG24CS491` |
-| `Urav B S` | `<PES1UG24CS507` |
+| `Urav B S` | `PES1UG24CS507` |
 | `Vennela Shakthi V P` | `PES1UG24CS525` |
 | `Yashas Shivarajappa` | `PES1UG24CS545` |
