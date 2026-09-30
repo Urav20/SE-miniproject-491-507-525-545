@@ -51,6 +51,43 @@ The system shall validate all train search inputs and reject invalid entries wit
 
 ---
 
+### FR-04 — Book Ticket
+
+**Requirement:**
+The system shall allow a registered passenger to book a ticket on a selected train, travel date and class by providing passenger details.
+
+**Priority:** High
+
+**Acceptance Criteria:**
+
+* The passenger can book only if seats are available in the selected class.
+* The passenger provides name, age and gender for each traveller.
+* The system generates a unique PNR (booking reference) after a successful booking.
+* The system reduces the available seat count for that class by the number of tickets booked.
+* The system displays a booking confirmation with PNR, train, date, class and fare.
+
+---
+
+### FR-05 — Passenger Detail Validation
+
+**Requirement:**
+The system shall validate passenger details before confirming a booking.
+
+**Priority:** Medium
+
+**Acceptance Criteria:**
+
+* The system rejects an empty passenger name.
+* The system rejects an age that is not between 1 and 120.
+* The system rejects a booking of more than 6 passengers in a single transaction.
+* The system displays which field is invalid.
+
+---
+
+### BR-01 — Maximum Passengers per Booking
+
+A single booking may contain at most 6 passengers.
+
 ## 2. Non-Functional Requirements
 
 ### NFR-01 — Performance
@@ -78,3 +115,16 @@ A first-time passenger shall be able to complete a train search without external
 
 * The search form has no more than three required fields.
 * Error messages state what is wrong and how to fix it.
+
+---
+### NFR-03 — Reliability
+
+**Requirement:**
+The system shall never assign the same seat to two different passengers for the same train, date and class.
+
+**Priority:** High
+
+**Acceptance Criteria:**
+
+* Two simultaneous bookings for the last available seat result in exactly one confirmed booking.
+* The second passenger receives a "No seats available" message.
