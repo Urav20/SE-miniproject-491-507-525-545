@@ -84,6 +84,44 @@ The system shall validate passenger details before confirming a booking.
 
 ---
 
+### FR-06 — Cancel Ticket
+
+**Requirement:**
+The system shall allow a passenger to cancel a booked ticket by entering the PNR.
+
+**Priority:** High
+
+**Acceptance Criteria:**
+
+* The passenger can enter a PNR to look up a booking.
+* The system cancels a valid, active booking and releases the seats back to availability.
+* The system displays an error for an invalid PNR.
+* The system displays an error if the booking is already cancelled.
+* The system displays a cancellation confirmation with the PNR and status.
+
+---
+
+### FR-07 — View Refund Amount
+
+**Requirement:**
+The system shall display the refund amount to the passenger before the cancellation is confirmed.
+
+**Priority:** Medium
+
+**Acceptance Criteria:**
+
+* The refund amount is calculated from the ticket fare and the cancellation rule (BR-02).
+* The system shows the refund amount and asks for confirmation before cancelling.
+* The passenger can decline and keep the booking.
+
+---
+
+### BR-02 — Refund Rule
+
+Refund percentage depends on how long before departure the ticket is cancelled. Exact slabs are TBD with the team (for example, 100% more than 48 hours before departure, 50% between 12 and 48 hours, 0% under 12 hours).
+
+---
+
 ### BR-01 — Maximum Passengers per Booking
 
 A single booking may contain at most 6 passengers.
