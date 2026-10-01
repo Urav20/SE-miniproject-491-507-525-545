@@ -128,3 +128,68 @@ The system shall never assign the same seat to two different passengers for the 
 
 * Two simultaneous bookings for the last available seat result in exactly one confirmed booking.
 * The second passenger receives a "No seats available" message.
+
+---
+
+### FR-06 — Cancel Ticket
+
+**Requirement:**
+The system shall allow a passenger to cancel a confirmed booking using the PNR.
+
+**Priority:** High
+
+**Acceptance Criteria:**
+
+* The passenger can enter a valid PNR to retrieve a booking.
+* The system allows cancellation only if the booking exists and has not already been cancelled.
+* The system increases the available seat count for that class by the number of cancelled seats.
+* The system displays a cancellation confirmation with the PNR and refund amount.
+
+---
+
+### FR-07 — Refund Calculation
+
+**Requirement:**
+The system shall calculate a refund amount based on how close the cancellation is to the travel date.
+
+**Priority:** Medium
+
+**Acceptance Criteria:**
+
+* The system deducts a cancellation fee from the original fare.
+* The refund amount is displayed to the passenger before the cancellation is finalised.
+* No refund is given if cancellation is requested after the train has departed.
+
+---
+
+### FR-08 — Cancellation Input Validation
+
+**Requirement:**
+The system shall validate the PNR entered for cancellation and reject invalid entries with a clear error message.
+
+**Priority:** Medium
+
+**Acceptance Criteria:**
+
+* The system rejects an empty PNR field.
+* The system rejects a PNR that does not exist in the system.
+* The system rejects cancellation of a booking that has already been cancelled.
+
+---
+
+### BR-02 — Cancellation Deadline
+
+A booking can only be cancelled up to 4 hours before the scheduled departure time.
+
+---
+
+### NFR-04 — Data Consistency
+
+**Requirement:**
+The system shall ensure that a cancelled seat is immediately available for a new booking.
+
+**Priority:** High
+
+**Acceptance Criteria:**
+
+* Once a cancellation is confirmed, the seat count update is visible to the next search/booking request with no delay.
