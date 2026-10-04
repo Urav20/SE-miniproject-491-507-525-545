@@ -1,6 +1,6 @@
 # Train Search Feature: Explained in Simple Words
 
-## 1. What did we build?
+## 1. What was built
 
 A passenger types **where from**, **where to** and **which date**. The system:
 
